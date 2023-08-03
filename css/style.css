@@ -1,14 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap");
+@import "reset.css";
+
 .hidden {
   display: none;
 }
-/* img {
-  z-index: -1;
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: azure;
+}
+
+#bg {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  opacity: 1;
-} */
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#clock {
+  display: flex;
+  font-size: 110px;
+  justify-content: center;
+  margin-top: 28vh;
+}
+
+#login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#login-form input:first-child {
+  background: transparent;
+  border: none;
+  /* border-bottom: 2px solid rgba(255, 255, 255, 0.3); */
+  height: 40px;
+  width: 300px;
+  font-size: 25px;
+}
+
+#login-form input:first-child::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 25px;
+}
+
+#login-form input:first-child:focus {
+  outline: none;
+  color: white;
+}
+
+#login-form input:last-child {
+  border: none;
+  border-radius: 10px;
+  background-color: azure;
+  margin-left: 10px;
+}
