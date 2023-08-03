@@ -14,7 +14,8 @@ function loginSubmit(event) {
 }
 
 function paintGreetings(username) {
-  greeting.innerText = `hello ${username}`;
+  greeting.innerText = `Have a nice day, ${username}.`;
+  loginForm.classList.remove("flex");
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
@@ -26,3 +27,14 @@ if (savedUsername === null) {
 } else {
   paintGreetings(savedUsername);
 }
+
+function removePlaceHolder() {
+  loginInput.placeholder = "";
+}
+
+function addPlaceHolder() {
+  loginInput.placeholder = "What is your name?";
+}
+
+loginInput.addEventListener("focus", removePlaceHolder);
+loginInput.addEventListener("blur", addPlaceHolder);
