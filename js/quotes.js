@@ -13,11 +13,6 @@ const quotes = [
   },
   {
     quote:
-      "If you cannot fly then run. If you cannot run, then walk. And if you cannot walk, then crawl, but whatever you do, you have to keep moving forward.",
-    author: "Martin Luther King Jr.",
-  },
-  {
-    quote:
       "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
     author: "Thomas Edison",
   },
@@ -38,7 +33,7 @@ const quotes = [
   },
   {
     quote:
-      "The only thing worse than starting something and falling.. is not starting something.",
+      "The only thing worse than starting something and falling is not starting something.",
     author: "Seth Godin",
   },
   {

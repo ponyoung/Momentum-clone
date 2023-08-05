@@ -3,8 +3,21 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
+const maxListLength = 4;
 
 let toDos = [];
+if (localStorage.getItem(TODOS_KEY) === null) {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
+
+function maxtodoListLength() {
+  const todoLength = JSON.parse(localStorage.getItem(TODOS_KEY)).length;
+  if (todoLength >= maxListLength) {
+    toDoInput.classList.add("hidden");
+  } else {
+    toDoInput.classList.remove("hidden");
+  }
+}
 
 // array 자체를 문자열로 만들어 locla storage에 저장! (array 형태로 저장하기 위함)
 function saveToDos() {
@@ -16,6 +29,7 @@ function deleteToDo(event) {
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
+  maxtodoListLength();
 }
 
 function paintToDo(newTodo) {
@@ -42,6 +56,7 @@ function handleToDoSubmit(event) {
   toDos.push(newTodoObj);
   paintToDo(newTodoObj);
   saveToDos();
+  maxtodoListLength();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
@@ -53,4 +68,5 @@ if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
+  maxtodoListLength();
 }

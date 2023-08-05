@@ -11,8 +11,8 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  color: azure;
+  font-family: var(--main-font);
+  color: white;
 }
 
 #bg {
@@ -31,7 +31,7 @@ body {
   display: flex;
   font-size: 130px;
   justify-content: center;
-  margin-top: 33vh;
+  margin-top: 38vh;
 }
 
 #login-form {
@@ -45,14 +45,14 @@ body {
 #login-form input:first-child {
   background: transparent;
   border: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: var(--input-border);
   padding-bottom: 6px;
   height: 40px;
   width: 330px;
   font-size: var(--name-input-fontsize);
   text-align: center;
   margin-right: 5px;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--main-font);
 }
 
 #login-form input:first-child::placeholder {
@@ -85,5 +85,73 @@ body {
   display: flex;
   justify-content: center;
   font-size: 37px;
-  margin-top: 25px;
+  margin-top: 35px;
 }
+
+#todo-form {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#todo-form span {
+  margin-top: 50px;
+  font-size: 32px;
+}
+
+#todo-form input {
+  background: transparent;
+  margin-top: 10px;
+  height: 30px;
+  width: 400px;
+  text-align: center;
+  border: none;
+  border-bottom: var(--input-border);
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-family: var(--main-font);
+  padding-bottom: 3px;
+}
+
+#todo-form input:focus {
+  outline: none;
+  color: white;
+}
+
+#quote {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#quote span:last-child {
+  margin-top: 10px;
+  opacity: 0.7;
+  font-size: 15px;
+}
+
+#todo-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+#todo-list li button {
+  background: transparent;
+  border: none;
+  opacity: 0.75;
+  margin-top: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* addEventListener mouseleave, mouseenter 을 써서 명언 애니메이션 만들기! */
